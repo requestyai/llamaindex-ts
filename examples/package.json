@@ -1,0 +1,16 @@
+{
+  "name": "@requesty/llamaindex-ts-examples",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "setup": "cp .env.example .env && echo 'Please edit .env and add your REQUESTY_API_KEY'",
+    "basic-chat": "node basic-chat.js",
+    "agent-workflow": "node agent-workflow.js"
+  },
+  "dependencies": {
+    "@requesty/llamaindex": "^0.1.0",
+    "@llamaindex/workflow": "^1.1.14",
+    "llamaindex": "^0.11.17",
+    "zod": "^3.25.76"
+  }
+}
