@@ -4,12 +4,15 @@
   "type": "module",
   "scripts": {
     "setup": "cp .env.example .env && echo 'Please edit .env and add your REQUESTY_API_KEY'",
-    "basic-chat": "node basic-chat.js",
-    "agent-workflow": "node agent-workflow.js"
+    "chat": "node chat.js",
+    "agent": "node agent.js",
+    "multi-agent":  "node multi-agent.js"
   },
   "dependencies": {
-    "@requesty/llamaindex": "^0.1.0",
     "@llamaindex/workflow": "^1.1.14",
+    "@llamaindex/tools": "^0.1.4",
+    "@requesty/llamaindex": "^0.1.0",
+    "dotenv": "^17.2.0",
     "llamaindex": "^0.11.17",
     "zod": "^3.25.76"
   }
