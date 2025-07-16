@@ -12,13 +12,13 @@ A LlamaIndex.TS provider to use with Requesty - a gateway that makes it easier t
 
 ```bash
 # For pnpm
-pnpm add @requesty/ai-sdk
+pnpm add @requesty/llamaindex
 
 # For npm
-npm install @requesty/ai-sdk
+npm install @requesty/llamaindex
 
 # For yarn
-yarn add @requesty/ai-sdk
+yarn add @requesty/llamaindex
 ```
 
 ## 🔧 Basic Usage
@@ -26,12 +26,11 @@ yarn add @requesty/ai-sdk
 Find the complete list of models [here](https://www.requesty.ai/solution/llm-routing/models).
 
 ```javascript
-import { requesty } from "llamaindex-requesty";
+import { requesty } from "@requesty/llamaindex";
 
 const llm = requesty({
   model: "openai/gpt-4o-mini",
-  apiKey: process.env.REQUESTY_API_KEY,
-  baseURL: "https://your-requesty-endpoint.com/v1"
+  apiKey: process.env.REQUESTY_API_KEY
 });
 
 // Use with any LlamaIndex.TS component
@@ -45,15 +44,14 @@ const response = await llm.chat({
 Perfect for building agents with tool calling:
 
 ```javascript
-import { requesty } from "llamaindex-requesty";
+import { requesty } from "@requesty/llamaindex";
 import { agent } from "@llamaindex/workflow";
 import { tool } from "llamaindex";
 import { z } from "zod";
 
 const llm = requesty({
   model: "openai/gpt-4o-mini",
-  apiKey: process.env.REQUESTY_API_KEY,
-  baseURL: "http://localhost:40000/v1"
+  apiKey: process.env.REQUESTY_API_KEY
 });
 
 const searchTool = tool({
